@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+
+<h3>Chúc mừng! bạn đã đăng ký thành công</h3>
+<table border="1" id="products">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>PhoneNumber</th>
+        <th>Age</th>
+        <th>Email</th>
+    </tr>
+    <th:block th:each="pro : ${users}">
+        <tr>
+
+            <td th:text="${pro.firstName}" ></td>
+            <td th:text="${pro.lastName}" ></td>
+            <td th:text="${pro.phoneNumber}" ></td>
+            <td th:text="${pro.age}" ></td>
+            <td th:text="${pro.email}" ></td>
+
+        </tr>
+    </th:block>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
